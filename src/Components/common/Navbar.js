@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { FaBars, FaShoppingCart } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
-import logo from '../Assets/logo.png';
+import logo from "../../Assets/logo.png";
 
 const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false);

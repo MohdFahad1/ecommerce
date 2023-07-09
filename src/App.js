@@ -7,8 +7,8 @@ import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import SingleProduct from './pages/SingleProduct';
 import Error from './pages/Error';
-import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
+import Navbar from './Components/common/Navbar';
+import Footer from './Components/common/Footer';
 
 function App() {
   return (

@@ -1,9 +1,12 @@
 import React from 'react';
-import { FaDiscord, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FaDiscord, FaInstagram, FaTwitter } from 'react-icons/fa';
+import Banner from './Banner';
 
 const Footer = () => {
   return (
-    <div className="text-white bg-[#061028] md:flex md:flex-row md:justify-around md:items-start md:gap-5 md:px-20 md:py-14 flex flex-col items-center py-7">
+    <>
+    <Banner />
+    <div className="text-white bg-[#061028] md:flex md:flex-row md:justify-around md:items-start md:gap-5 md:px-20 md:py-14 md:pt-20 flex flex-col items-center py-7 pt-20">
 
         {/* ABOUT */}
         <div className="md:text-left text-center">
@@ -15,9 +18,9 @@ const Footer = () => {
         <div className="md:mt-0 mt-10">
             <p className="text-xl font-semibold">Subscribe to get important updates</p>
             <div className="md:flex md:flex-col md:justify-normal md:items-start flex flex-col justify-center items-center">
-                <input type="email" placeholder='Your E-Mail' className="text-black h-[35px] w-[250px] px-5 mt-3 outline-none "/>
+                <input type="email" placeholder='Your E-Mail' className="text-black h-[35px] w-[250px] px-5 mt-3 outline-none rounded-md"/>
                 <div className="md:flex md:justify-normal flex justify-center">
-                    <button className="bg-[#6152ED] rounded-lg h-[35px] w-[100px] mt-5">Subscribe</button>
+                    <button className="bg-[#6152ED] rounded-md h-[35px] w-[100px] mt-5">Subscribe</button>
                 </div>
             </div>
         </div>
@@ -44,6 +47,7 @@ const Footer = () => {
             <p className="text-lg mt-3">+91 123 456 789</p>
         </div>
     </div>
+    </>
   )
 }
 
