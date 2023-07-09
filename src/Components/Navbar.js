@@ -7,7 +7,7 @@ const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
     
   return (
-    <nav className="md:flex justify-between items-center bg-gray-300 h-auto flex px-10">
+    <nav className="md:flex justify-between items-center bg-[#F7F8FB] h-auto flex px-10">
 
     {/* LOGO */}
         <div>
