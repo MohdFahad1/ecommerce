@@ -1,8 +1,14 @@
 import React from 'react'
+import Hero from '../Components/common/Hero'
 
 const About = () => {
+  const data = {
+    name:"Ecommerce"
+  }
   return (
-    <div>About</div>
+    <div>
+      <Hero myData={data}/>
+    </div>
   )
 }
 

@@ -5,9 +5,12 @@ import BestProducts from '../Components/HomeComponents/BestProducts';
 import Trusted from '../Components/HomeComponents/Trusted';
 
 const Home = () => {
+  const data = {
+    name: "Store"
+  }
   return (
     <div>
-      <Hero />
+      <Hero myData={data}/>
       <BestProducts />
       <Services />
       <Trusted />
