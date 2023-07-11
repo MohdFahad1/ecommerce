@@ -5,6 +5,7 @@ import MyImage from '../Components/SingleProductComponents/MyImage';
 import { TbTruckDelivery, TbReplace } from 'react-icons/tb';
 import { MdSecurity } from 'react-icons/md';
 import FormatPrice from '../Components/Helpers/FormatPrice';
+import Star from '../Components/SingleProductComponents/Star';
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -40,8 +41,12 @@ const SingleProduct = () => {
       {/* PRODUCT DATA */}
           <div>
             <p className="text-3xl font-medium capitalize">{name}</p>
-            <p className="text-[#797878] mt-3">{stars}</p>
-            <p className="text-[#797878] mb-3">{reviews} reviews</p>
+
+            {/* RATINGS */}
+            <Star stars={stars} reviews={reviews}/>
+
+
+            {/* PRICE */}
             <p className="flex gap-1">
               MRP: 
               <del><FormatPrice price={ price + 250000 }/></del>
@@ -49,7 +54,11 @@ const SingleProduct = () => {
             <p className="text-[#7B75C0] mb-3">Deal of the Day: <FormatPrice price={price}/>
             </p>
 
+
+            {/* DESCRIPTION */}
             <p className="text-[#797878] md:w-[500px] w-[350px]">{description}</p>
+
+             {/* ICONS  */}
             <div className="flex justify-between my-3">
               <div className="flex flex-col justify-center items-center">
               <div className="bg-[#F7F8FB] h-[40px] w-[40px] flex justify-center items-center rounded-full">
@@ -77,13 +86,18 @@ const SingleProduct = () => {
               </div>
             </div>
 
+
+            {/* IN STOCK & BRAND */}
             <div>
               <p>Available: <span className={`stock ${stock > 0 ? "text-green-600" : "text-red-600"} font-medium`}>{stock > 0 ? "In Stock": "Not Available"}</span></p>
               <p>
                 Brand: <span className="font-medium my-3 capitalize">{company}</span>
               </p>
             </div>
+
           </div>
+
+
         </div>
       </div>
 
