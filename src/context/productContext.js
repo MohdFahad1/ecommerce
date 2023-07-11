@@ -17,6 +17,8 @@ const initialState = {
     isError: false,
     products: [],
     featuredProducts: [],
+    isSingleLoading: false,
+    singleProduct: {},
 }
 
 // The children inside the AppProvider is nothing but our App component which is wrapped inside the index.js
@@ -26,6 +28,7 @@ const AppProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    // API call for OurBestProduct section on Home Page
     const getProducts = async (url) => {
         dispatch({ type: "SET_LOADING" })
         try {
@@ -37,12 +40,25 @@ const AppProvider = ({ children }) => {
         }
     }
 
+
+    // API call forsingleproduct info
+    const getSingleProduct = async (url) => {
+        dispatch({type: "SET_SINGLE_LOADING"});
+        try {
+            const res = await axios.get(url);
+            const singleProduct = await res.data;
+            dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProduct })
+        } catch (error) {
+            dispatch({ type: "SET_SINGLE_ERROR" })
+        }
+    }
+
     useEffect(() => {
         getProducts(API);
     }, [])
     
 
-    return <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    return <AppContext.Provider value={{ ...state, getSingleProduct }}>{children}</AppContext.Provider>
 }
 
 
