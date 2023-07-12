@@ -6,6 +6,7 @@ import { TbTruckDelivery, TbReplace } from 'react-icons/tb';
 import { MdSecurity } from 'react-icons/md';
 import FormatPrice from '../Components/Helpers/FormatPrice';
 import Star from '../Components/SingleProductComponents/Star';
+import AddToCart from '../Components/SingleProductComponents/AddToCart';
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -94,6 +95,12 @@ const SingleProduct = () => {
                 Brand: <span className="font-medium my-3 capitalize">{company}</span>
               </p>
             </div>
+
+            <div className="h-[3px] max-w-[100%] w-[90%] bg-[#ccc] my-3"></div>
+
+            {
+              stock > 0 && <AddToCart product={singleProduct}/>
+            }
 
           </div>
 
