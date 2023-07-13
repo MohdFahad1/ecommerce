@@ -7,7 +7,7 @@ const Products = () => {
 
   return (
     <div className="my-10">
-      <div className="flex items-center justify-around">
+      <div className="flex justify-around">
 
         {/* LEFT ALL FILTER SECTION */}
         <div>
