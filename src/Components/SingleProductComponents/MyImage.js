@@ -9,8 +9,8 @@ const MyImage = ({imgs = [{url: ""}]}) => {
     <div className="flex md:flex-col flex-row">
       {imgs.map((currElem, index) => {
         return (
-          <figure>
-            <img src={currElem.url} alt={currElem.filename} key={index} className="h-[100px] w-[160px] mt-3 cursor-pointer" onClick={() => setMainImage(currElem)}/>
+          <figure key={index}>
+            <img src={currElem.url} alt={currElem.filename} className="h-[100px] w-[160px] mt-3 cursor-pointer" onClick={() => setMainImage(currElem)}/>
           </figure>
         )
       })}

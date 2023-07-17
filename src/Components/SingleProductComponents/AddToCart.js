@@ -35,7 +35,7 @@ const AddToCart = ({ product }) => {
 
       <div className="mt-4">
       <NavLink to="/cart">
-        <btton className="bg-[#6152ED] rounded-md uppercase text-white  font-medium text-sm p-3">Add To Cart</btton>
+        <button className="bg-[#6152ED] rounded-md uppercase text-white  font-medium text-sm p-3">Add To Cart</button>
       </NavLink>
       </div>
     </div>
