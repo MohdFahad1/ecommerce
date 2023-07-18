@@ -1,9 +1,10 @@
 import React from 'react'
 import { useFilterContext } from '../../context/filter_context';
 import {FaCheck} from "react-icons/fa";
+import FormatPrice from '../Helpers/FormatPrice';
 
 const FilterSection = () => {
-  const {filters: {text, color}, all_products, updateFilterValue} = useFilterContext();
+  const {filters: {text, color, price, minPrice, maxPrice}, all_products, updateFilterValue, clearFilters} = useFilterContext();
 
   // TO GET UNIQUE DATA
   const getUniqueData = (data, property) => {
@@ -25,7 +26,9 @@ const FilterSection = () => {
   const companyOnlyData = getUniqueData(all_products, "company");
   const colorsOnlyData = getUniqueData(all_products, "colors");
 
-  console.log(colorsOnlyData);
+  // console.log(price);
+  // console.log(maxPrice);
+  // console.log(minPrice);
 
   // console.log(colorsData);
   return (
@@ -80,6 +83,21 @@ const FilterSection = () => {
           )
         })}
         </div>
+      </div>
+
+
+      {/* FILTER BY PRICE */}
+      <div>
+        <h3 className="text-xl font-medium mt-3 uppercase">Price</h3>
+        <p>
+        <FormatPrice price={price}/>
+        </p>
+        <input type="range" name="price" min={minPrice} max={maxPrice} value={price} onChange={updateFilterValue}/>
+      </div>
+
+      {/* CLEAR ALL FILTERS */}
+      <div>
+        <button className="uppercase border-2 border-black" onClick={clearFilters}>Clear filters</button>
       </div>
 
     </div>
