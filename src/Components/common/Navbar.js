@@ -2,9 +2,11 @@ import React, {useState} from 'react';
 import { FaBars, FaShoppingCart } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 import logo from "../../Assets/logo.png";
+import { useCartContext } from '../../context/cart_context';
 
 const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
+    const {total_item} = useCartContext();
     
   return (
     <nav className="md:flex justify-between items-center bg-[#F7F8FB] h-auto flex px-10">
@@ -30,7 +32,7 @@ const Navbar = () => {
         <div className="md:flex  gap-3 items-center hidden">
  
             <button className="bg-[#513EB4] rounded-lg text-white h-[35px] w-[80px]">Log In</button>
-            <div className="flex items-center relative">
+            <div className="flex items-center relative">{total_item}
                 <div className="bg-[#F25621] h-[10px] w-[10px] rounded-full flex justify-center items-center absolute -top-1 -right-1">
                 <div className="animate-ping rounded-full h-[10px] w-[10px] bg-[#F25621]  -top-2 -right-2"></div>
             </div>
